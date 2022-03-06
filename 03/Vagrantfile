@@ -1,0 +1,17 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+
+Vagrant.configure("2") do |config|
+	config.vm.box = "debian/buster64"
+	config.disksize.size = "120GB"
+	config.vm.network "public_network", type: "dhcp", bridge: "enp2s0"
+	config.vm.network "private_network", ip: "172.16.0.1", netmask: "255.255.255.0", gateway: "172.16.0.1", virtualbox__intnet: "teste"
+	config.vm.host_name = "OPLOT"
+	config.vm.provision "shell", path: "~/scripts/startup_debian.sh"
+	config.vm.provider "virtualbox" do |vbox|
+		vbox.name = "OPLOT"
+		vbox.memory= "1512"
+		vbox.cpus = "1"
+	end
+end
