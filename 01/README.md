@@ -25,7 +25,6 @@ OBS.: As boxes baixadas ficam armazenadas localmente no diretório ~/.vagrant/bo
     Verifica globalmente. Tanto as boxes disponíveis localmente, quanto as existentes no hypervisor:
         ```sh
             vagrant box outdated --global 
-            
         ```
     Verifica se as boxes utilizadas no projeto estão outdated:
         ```sh
